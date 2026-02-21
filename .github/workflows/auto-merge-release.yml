@@ -14,10 +14,8 @@ permissions:
 
 jobs:
   auto-approve-and-merge:
-    runs-on: ubuntu-latest
-    if: |
-      github.event.pull_request.head.ref == 'develop' &&
-      contains(github.event.pull_request.labels.*.name, 'release')
+    runs-on: ubuntu-slim
+    if: ${{ github.event.pull_request.head.ref == 'develop' && contains(github.event.pull_request.labels.*.name, 'release') }}
     steps:
       - name: Approve PR
         run: gh pr review --approve "${{ github.event.pull_request.html_url }}"
