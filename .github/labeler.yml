@@ -1,0 +1,10 @@
+# Labels based on file paths
+ci:
+  - ".github/workflows/**/*"
+documentation:
+  - "README.md"
+  - "docs/**/*"
+security:
+  - ".github/dependabot.yml"
+config:
+  - ".serena/**/*"
